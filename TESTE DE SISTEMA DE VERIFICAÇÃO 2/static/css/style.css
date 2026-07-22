@@ -1,0 +1,815 @@
+/* =====================================
+SISTEMA PRESENÇA ESCOLAR
+PAINEL PRINCIPAL
+Tema Verde Sofisticado
+===================================== */
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Arial, sans-serif;
+}
+
+
+
+/* CORPO DA PÁGINA */
+
+body{
+
+    background:#f1f8f4;
+
+    color:#1b4332;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+
+/* CONTEÚDO PRINCIPAL */
+
+.page-content{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:30px auto;
+
+    flex:1;
+
+}
+
+
+
+/* ÁREA DE BOAS-VINDAS */
+
+.welcome{
+
+    background:linear-gradient(135deg,#2d6a4f,#40916c);
+
+    color:white;
+
+    padding:25px 30px;
+
+    border-radius:18px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+
+}
+
+
+
+.welcome h2{
+
+    font-size:26px;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.welcome p{
+
+    font-size:16px;
+
+    opacity:.9;
+
+}
+
+
+
+/* ÁREA DOS CARDS */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+    gap:18px;
+
+}
+
+
+
+/* CARD */
+
+.card{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:22px 15px;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 25px rgba(45,106,79,.20);
+
+}
+
+
+
+/* ÍCONE DO CARD */
+
+.card h3:first-child{
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+/* NOME DO CARD */
+
+.card h3:last-of-type{
+
+    font-size:18px;
+
+    color:#1b4332;
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* BOTÕES DOS CARDS */
+
+.card a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#2d6a4f;
+
+    color:white;
+
+    padding:9px 20px;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+
+.card a:hover{
+
+    background:#40916c;
+
+}
+
+
+
+/* RODAPÉ */
+
+.footer{
+
+    margin-top:auto;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#52796f;
+
+    font-size:14px;
+
+    padding:20px;
+
+}
+
+
+
+/* RESPONSIVIDADE */
+
+@media(max-width:700px){
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .welcome h2{
+
+        font-size:22px;
+
+    }
+
+}
+
+/* ================================
+CADASTRO DE ALUNO
+================================ */
+
+
+.cadastro-page{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+
+
+.cadastro-card{
+
+    width:100%;
+
+    max-width:600px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+
+
+.cadastro-header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+
+
+.cadastro-header h1{
+
+    color:#1b4332;
+
+    font-size:28px;
+
+}
+
+
+
+.cadastro-header p{
+
+    color:#52796f;
+
+}
+
+
+
+
+.campo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:18px;
+
+}
+
+
+
+.campo label{
+
+    margin-bottom:7px;
+
+    font-weight:bold;
+
+    color:#2d6a4f;
+
+}
+
+
+
+.campo input,
+.campo select{
+
+    width:100%;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    border:1px solid #ccc;
+
+    font-size:15px;
+
+}
+
+
+
+.campo input:focus,
+.campo select:focus{
+
+    outline:none;
+
+    border-color:#40916c;
+
+}
+
+
+
+
+.responsavel{
+
+    margin-top:25px;
+
+    padding-top:20px;
+
+    border-top:2px solid #d8f3dc;
+
+}
+
+
+
+.responsavel h2{
+
+    color:#1b4332;
+
+    font-size:20px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.botao-cadastrar{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#2d6a4f;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+
+.botao-cadastrar:hover{
+
+    background:#40916c;
+
+}
+
+
+
+.voltar{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:20px;
+
+    text-decoration:none;
+
+    color:#2d6a4f;
+
+    font-weight:bold;
+
+}
+
+/* ==================================
+LISTA DE ALUNOS
+================================== */
+
+
+.lista-container{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+
+
+.lista-container h1{
+
+    text-align:center;
+
+    color:#1b4332;
+
+    margin:25px 0 10px;
+
+}
+
+
+
+.lista-container h3{
+
+    text-align:center;
+
+    color:#52796f;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* TABELA */
+
+.tabela-alunos{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+
+.tabela-alunos th{
+
+    background:#2d6a4f;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+
+
+.tabela-alunos td{
+
+    padding:12px;
+
+    text-align:center;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+
+
+.tabela-alunos tr:hover{
+
+    background:#f1f8f4;
+
+}
+
+
+
+/* FOTO */
+
+.foto-aluno{
+
+    width:70px;
+
+    height:70px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+}
+
+
+
+/* BOTÕES */
+
+
+.btn-editar,
+.btn-excluir{
+
+    text-decoration:none;
+
+    padding:8px 12px;
+
+    border-radius:8px;
+
+    color:white;
+
+    font-size:14px;
+
+    margin:3px;
+
+    display:inline-block;
+
+}
+
+
+
+.btn-editar{
+
+    background:#40916c;
+
+}
+
+
+
+.btn-excluir{
+
+    background:#c1121f;
+
+}
+
+/* =================================
+RELATÓRIO DE PRESENÇA
+================================= */
+
+
+.relatorio-container{
+
+    width:95%;
+
+    max-width:1200px;
+
+    margin:30px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+
+
+.relatorio-container h1{
+
+    text-align:center;
+
+    color:#1b4332;
+
+    margin:25px 0 10px;
+
+}
+
+
+
+.relatorio-container h3{
+
+    text-align:center;
+
+    color:#52796f;
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* BOTÃO PDF */
+
+.btn-pdf{
+
+    display:inline-block;
+
+    background:#2d6a4f;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.btn-pdf:hover{
+
+    background:#40916c;
+
+}
+
+
+
+/* TABELA */
+
+
+.tabela-relatorio{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+
+.tabela-relatorio th{
+
+    background:#2d6a4f;
+
+    color:white;
+
+    padding:14px;
+
+}
+
+
+
+.tabela-relatorio td{
+
+    padding:12px;
+
+    text-align:center;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+
+
+.tabela-relatorio tr:hover{
+
+    background:#f1f8f4;
+
+}
+
+
+
+/* PRESENTE */
+
+.presenca{
+
+    color:#2d6a4f;
+
+    font-weight:bold;
+
+}
+
+
+
+/* FALTA */
+
+.falta{
+
+    color:#d00000;
+
+    font-weight:bold;
+
+}
+
+/* ================================
+HISTÓRICO DE CHAMADAS
+================================ */
+
+
+.historico-container{
+
+    width:95%;
+
+    max-width:1200px;
+
+    margin:30px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+
+
+.historico-container h1{
+
+    text-align:center;
+
+    color:#1b4332;
+
+    margin:25px 0 10px;
+
+}
+
+
+
+.historico-container h3{
+
+    text-align:center;
+
+    color:#52796f;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+.tabela-historico{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+
+.tabela-historico th{
+
+    background:#2d6a4f;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+
+
+.tabela-historico td{
+
+    padding:10px;
+
+    text-align:center;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+
+
+.tabela-historico tr:hover{
+
+    background:#f1f8f4;
+
+}
+
+
+
+/* STATUS */
+
+.status{
+
+    font-weight:bold;
+
+}

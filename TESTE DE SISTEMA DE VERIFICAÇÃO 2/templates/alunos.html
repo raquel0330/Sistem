@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Lista de Alunos
+</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="page-content">
+
+
+<div class="lista-container">
+
+
+<a href="/inicio" class="btn-voltar">
+
+⬅ Voltar ao Painel
+
+</a>
+
+
+
+<h1>
+Lista de Alunos
+</h1>
+
+
+<h3>
+Turma: {{ turma }}
+</h3>
+
+
+
+
+<table class="tabela-alunos">
+
+
+<thead>
+
+<tr>
+
+<th>
+Foto
+</th>
+
+<th>
+Nome
+</th>
+
+<th>
+Responsável
+</th>
+
+<th>
+Telefone
+</th>
+
+<th>
+E-mail
+</th>
+
+<th>
+Ações
+</th>
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+
+{% for aluno in alunos %}
+
+
+<tr>
+
+
+<td>
+
+<img
+src="{{ url_for('static', filename='fotos/' + aluno[3]) }}"
+class="foto-aluno">
+
+</td>
+
+
+<td>
+{{ aluno[1] }}
+</td>
+
+
+<td>
+{{ aluno[4] }}
+</td>
+
+
+<td>
+{{ aluno[5] }}
+</td>
+
+
+<td>
+{{ aluno[6] }}
+</td>
+
+
+<td>
+
+
+<a href="/editar/{{ aluno[0] }}" class="btn-editar">
+
+✏️ Editar
+
+</a>
+
+
+
+<a 
+href="/excluir/{{ aluno[0] }}"
+onclick="return confirm('Tem certeza que deseja excluir este aluno?')"
+class="btn-excluir">
+
+🗑️ Excluir
+
+</a>
+
+
+
+</td>
+
+
+</tr>
+
+
+{% endfor %}
+
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>
