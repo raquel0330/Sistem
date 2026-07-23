@@ -1,0 +1,9 @@
+Flask
+Werkzeug
+opencv-python
+face-recognition
+face-recognition-models
+numpy
+Pillow
+reportlab
+gunicorn
