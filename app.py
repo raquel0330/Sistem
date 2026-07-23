@@ -25,13 +25,14 @@ app.config["UPLOAD_FOLDER"] = "static/fotos"
 # ===========================
 
 import os
+import sqlite3
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 
 def conectar():
     caminho_banco = os.path.join(BASE_DIR, "instance", "banco.db")
     return sqlite3.connect(caminho_banco)
-
 # ===========================
 # LOGIN
 # ===========================
