@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Relatório de Presença
+</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="page-content">
+
+
+<div class="relatorio-container">
+
+
+
+<a href="/inicio" class="btn-voltar">
+
+⬅ Voltar ao Painel
+
+</a>
+
+
+
+<h1>
+
+📊 Relatório de Presença
+
+</h1>
+
+
+
+<h3>
+
+Turma: {{ turma }}
+
+</h3>
+
+
+
+
+<a href="/exportar_frequencia_pdf" class="btn-pdf">
+
+📄 Exportar Frequência PDF
+
+</a>
+
+
+
+
+
+<table class="tabela-relatorio">
+
+
+<thead>
+
+<tr>
+
+<th>
+Aluno
+</th>
+
+<th>
+Presenças
+</th>
+
+<th>
+Faltas
+</th>
+
+<th>
+Frequência
+</th>
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+
+{% for aluno in alunos %}
+
+
+<tr>
+
+
+<td>
+{{ aluno[0] }}
+</td>
+
+
+<td class="presenca">
+
+{{ aluno[1] }}
+
+</td>
+
+
+<td class="falta">
+
+{{ aluno[2] }}
+
+</td>
+
+
+<td>
+
+{% if aluno[1] or aluno[2] %}
+
+{{ ((aluno[1] / (aluno[1] + aluno[2])) * 100) | round(1) }}%
+
+{% else %}
+
+0%
+
+{% endif %}
+
+
+</td>
+
+
+</tr>
+
+
+{% endfor %}
+
+
+</tbody>
+
+
+</table>
+
+
+
+</div>
+
+
+</div>
+
+
+
+</body>
+
+</html>

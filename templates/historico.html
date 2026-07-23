@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Histórico de Chamadas
+</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="page-content">
+
+
+<div class="historico-container">
+
+
+
+<a href="/inicio" class="btn-voltar">
+
+⬅ Voltar ao Painel
+
+</a>
+
+
+
+
+<h1>
+📋 Histórico de Chamadas
+</h1>
+
+
+
+<h3>
+Turma: {{ turma }}
+</h3>
+
+
+
+
+<a href="/exportar_pdf" class="btn-pdf">
+
+📄 Exportar PDF
+
+</a>
+
+
+
+
+
+<table class="tabela-historico">
+
+
+<thead>
+
+<tr>
+
+<th>
+Aluno
+</th>
+
+<th>
+Data
+</th>
+
+<th>
+Hora
+</th>
+
+<th>
+Aula
+</th>
+
+<th>
+Status
+</th>
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+
+{% for chamada in chamadas %}
+
+
+<tr>
+
+
+<td>
+{{ chamada[0] }}
+</td>
+
+
+<td>
+{{ chamada[1] }}
+</td>
+
+
+<td>
+{{ chamada[2] }}
+</td>
+
+
+<td>
+{{ chamada[3] }}
+</td>
+
+
+<td class="status">
+
+{{ chamada[4] }}
+
+</td>
+
+
+</tr>
+
+
+{% endfor %}
+
+
+</tbody>
+
+
+</table>
+
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>

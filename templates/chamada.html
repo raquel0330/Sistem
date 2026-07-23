@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Fazer Chamada
+</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+
+
+<body>
+
+
+<a href="/inicio">
+
+<button>
+⬅ Voltar ao Painel
+</button>
+
+</a>
+
+
+<h1>
+Fazer Chamada
+</h1>
+
+
+<h3>
+Turma: {{ turma }}
+</h3>
+
+
+
+<form action="/salvar_chamada" method="POST">
+
+
+
+<label>
+Selecione a aula:
+</label>
+
+
+
+<select name="aula" required>
+
+
+<option value="1ª Aula">
+1ª Aula
+</option>
+
+
+<option value="2ª Aula">
+2ª Aula
+</option>
+
+
+<option value="3ª Aula">
+3ª Aula
+</option>
+
+
+<option value="4ª Aula">
+4ª Aula
+</option>
+
+
+<option value="5ª Aula">
+5ª Aula
+</option>
+
+
+<option value="6ª Aula">
+6ª Aula
+</option>
+
+
+</select>
+
+
+
+<br><br>
+
+
+
+
+<table border="1">
+
+
+<tr>
+
+<th>
+Presente
+</th>
+
+
+<th>
+Foto
+</th>
+
+
+<th>
+Nome
+</th>
+
+
+</tr>
+
+
+
+
+{% for aluno in alunos %}
+
+
+
+<tr>
+
+
+<td>
+
+<input 
+type="checkbox"
+name="alunos"
+value="{{ aluno[0] }}">
+
+</td>
+
+
+
+
+<td>
+
+<img 
+src="{{ url_for('static', filename='fotos/' + aluno[2]) }}"
+width="70">
+
+</td>
+
+
+
+
+<td>
+
+{{ aluno[1] }}
+
+</td>
+
+
+
+</tr>
+
+
+
+{% endfor %}
+
+
+
+
+</table>
+
+
+
+
+<br>
+
+
+
+<button type="submit">
+
+Salvar Chamada
+
+</button>
+
+
+
+</form>
+
+
+
+</body>
+
+</html>

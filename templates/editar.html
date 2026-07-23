@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Editar Aluno
+</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+
+
+<body>
+
+
+<a href="/alunos">
+
+<button>
+⬅ Voltar para Alunos
+</button>
+
+</a>
+
+
+<h1>
+Editar Aluno
+</h1>
+
+
+
+<form method="POST" enctype="multipart/form-data">
+
+
+<label>
+Nome:
+</label>
+
+<br>
+
+<input 
+type="text"
+name="nome"
+value="{{ aluno[1] }}"
+required>
+
+
+<br><br>
+
+
+
+<label>
+Turma:
+</label>
+
+<br>
+
+<input 
+type="text"
+name="turma_id"
+value="{{ aluno[2] }}"
+required>
+
+
+<br><br>
+
+
+
+<label>
+Responsável:
+</label>
+
+<br>
+
+<input 
+type="text"
+name="responsavel"
+value="{{ aluno[4] }}">
+
+
+<br><br>
+
+
+
+<label>
+Telefone:
+</label>
+
+<br>
+
+<input 
+type="text"
+name="telefone"
+value="{{ aluno[5] }}">
+
+
+<br><br>
+
+
+
+<label>
+E-mail:
+</label>
+
+<br>
+
+<input 
+type="email"
+name="email"
+value="{{ aluno[6] }}">
+
+
+<br><br>
+
+
+
+<label>
+Foto atual:
+</label>
+
+<br>
+
+
+<img 
+src="{{ url_for('static', filename='fotos/' + aluno[3]) }}"
+width="120">
+
+
+<br><br>
+
+
+
+<label>
+Nova foto (opcional):
+</label>
+
+<br>
+
+
+<input 
+type="file"
+name="foto"
+accept="image/*">
+
+
+<br><br>
+
+
+
+<button type="submit">
+
+Salvar Alterações
+
+</button>
+
+
+
+</form>
+
+
+</body>
+
+
+</html>

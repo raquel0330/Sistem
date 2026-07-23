@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Cadastrar Aluno
+</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+
+<div class="cadastro-page">
+
+
+    <div class="cadastro-card">
+
+
+        <div class="cadastro-header">
+
+            <h1>
+                Cadastro de Aluno
+            </h1>
+
+            <p>
+                Preencha os dados do aluno
+            </p>
+
+        </div>
+
+
+
+        <form action="/cadastrar" method="POST" enctype="multipart/form-data">
+
+
+            <div class="campo">
+
+                <label>
+                    Nome do aluno
+                </label>
+
+                <input 
+                type="text"
+                name="nome"
+                placeholder="Digite o nome do aluno"
+                required>
+
+            </div>
+
+
+
+            <div class="campo">
+
+                <label>
+                    Turma
+                </label>
+
+                <select name="turma_id" required>
+
+                    <option value="">
+                    Selecione a turma
+                    </option>
+
+                    <option value="1">
+                    3º Ano B
+                    </option>
+
+                    <option value="2">
+                    2º Ano A
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+
+            <div class="campo">
+
+                <label>
+                    Foto do aluno
+                </label>
+
+                <input 
+                type="file"
+                name="foto"
+                accept="image/*"
+                required>
+
+            </div>
+
+
+
+
+            <div class="responsavel">
+
+                <h2>
+                    Dados do Responsável
+                </h2>
+
+
+                <div class="campo">
+
+                    <label>
+                    Nome
+                    </label>
+
+                    <input
+                    type="text"
+                    name="responsavel"
+                    placeholder="Nome do responsável"
+                    required>
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                    Telefone
+                    </label>
+
+                    <input
+                    type="text"
+                    name="telefone"
+                    placeholder="Telefone"
+                    required>
+
+                </div>
+
+
+
+                <div class="campo">
+
+                    <label>
+                    E-mail
+                    </label>
+
+                    <input
+                    type="email"
+                    name="email"
+                    placeholder="E-mail"
+                    required>
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <button class="botao-cadastrar" type="submit">
+
+                Cadastrar Aluno
+
+            </button>
+
+
+
+        </form>
+
+
+
+        <a href="/" class="voltar">
+
+            ← Voltar ao início
+
+        </a>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+</body>
+
+</html>

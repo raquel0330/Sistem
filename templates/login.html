@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Presença Escolar</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- Lado esquerdo -->
+
+    <div class="left">
+
+
+        <img 
+        src="{{ url_for('static', filename='imagens/logo.png') }}" 
+        class="logo">
+
+
+        <h1>
+            PRESENÇA<br>
+            ESCOLAR
+        </h1>
+
+
+        <h2>
+            RECONHECIMENTO FACIAL
+        </h2>
+
+
+        <p>
+            Tecnologia a serviço da educação
+        </p>
+
+
+    </div>
+
+
+
+    <!-- Lado direito -->
+
+
+    <div class="right">
+
+
+        <div class="login-box">
+
+
+            <h1>
+                Acesse o sistema
+            </h1>
+
+
+            <p>
+                Informe seus dados para iniciar
+            </p>
+
+
+
+            <form action="/login" method="POST">
+
+
+                <label>
+                    Usuário
+                </label>
+
+
+                <input
+                type="text"
+                name="usuario"
+                placeholder="Digite seu usuário"
+                required>
+
+
+
+                <label>
+                    Senha
+                </label>
+
+
+                <input
+                type="password"
+                name="senha"
+                placeholder="Digite sua senha"
+                required>
+
+
+
+
+                <label>
+                    Turma
+                </label>
+
+
+
+                <select name="turma" required>
+
+
+                    <option value="">
+                        Selecione a turma
+                    </option>
+
+
+
+                    <option value="3º Ano B">
+                        3º Ano B
+                    </option>
+
+
+
+                    <option value="2º Ano A">
+                        2º Ano A
+                    </option>
+
+
+
+                </select>
+
+
+
+
+                <button type="submit">
+
+                    Entrar no Sistema
+
+                </button>
+
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+
+</html>
