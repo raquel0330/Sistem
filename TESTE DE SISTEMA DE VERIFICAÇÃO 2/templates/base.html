@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        Sistema de Presença Escolar
+        {% endblock %}
+    </title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+
+            <h2 class="logo">
+                📚 Presença Escolar
+            </h2>
+
+
+            <nav>
+
+                <a href="/">
+                    🏠 Início
+                </a>
+
+                <a href="/alunos">
+                    👥 Alunos
+                </a>
+
+                <a href="/cadastrar">
+                    ➕ Cadastrar
+                </a>
+
+                <a href="/reconhecimento">
+                    📷 Reconhecimento
+                </a>
+
+                <a href="/frequencia">
+                    📋 Frequência
+                </a>
+
+            </nav>
+
+
+        </aside>
+
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="content">
+
+
+            <header class="topo">
+
+                <h1>
+                    {% block header %}
+                    Sistema de Presença Escolar
+                    {% endblock %}
+                </h1>
+
+
+            </header>
+
+
+
+            <section>
+
+                {% block content %}
+
+                {% endblock %}
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+</body>
+
+</html>

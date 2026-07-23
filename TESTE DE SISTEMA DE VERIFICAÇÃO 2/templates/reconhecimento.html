@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+Reconhecimento Facial
+</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+
+
+<body>
+
+
+<a href="/inicio">
+
+<button>
+⬅ Voltar ao Painel
+</button>
+
+</a>
+
+
+
+<h1>
+📷 Reconhecimento Facial
+</h1>
+
+
+
+<div class="card">
+
+
+<h3>
+Turma: {{ turma }}
+</h3>
+
+
+<p>
+Selecione o horário da aula para iniciar a chamada automática.
+</p>
+
+
+
+<form action="/iniciar_reconhecimento" method="POST">
+
+
+
+<label>
+Horário da aula:
+</label>
+
+
+
+<select name="aula" required>
+
+
+<option value="">
+Selecione
+</option>
+
+
+<option value="1ª Aula">
+1ª Aula
+</option>
+
+
+<option value="2ª Aula">
+2ª Aula
+</option>
+
+
+<option value="3ª Aula">
+3ª Aula
+</option>
+
+
+<option value="4ª Aula">
+4ª Aula
+</option>
+
+
+<option value="5ª Aula">
+5ª Aula
+</option>
+
+
+<option value="6ª Aula">
+6ª Aula
+</option>
+
+
+</select>
+
+
+<br><br>
+
+
+
+<button type="submit">
+🚀 Iniciar Reconhecimento
+</button>
+
+
+</form>
+
+
+</div>
+
+
+
+</body>
+
+</html>

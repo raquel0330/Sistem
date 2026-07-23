@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Painel Presença Escolar
+{% endblock %}
+
+
+
+{% block header %}
+
+Painel Principal
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+<div class="welcome">
+
+    <h2>
+        Sistema Presença Escolar
+    </h2>
+
+
+    <p>
+        Professor: {{ professor }}
+    </p>
+
+
+    <p>
+        Turma selecionada: {{ turma }}
+    </p>
+
+</div>
+
+
+
+<div class="cards">
+
+
+    <div class="card">
+
+        <h3>👨‍🎓</h3>
+
+        <h3>
+            Cadastrar aluno
+        </h3>
+
+        <a href="/cadastrar">
+            Acessar
+        </a>
+
+    </div>
+
+
+
+
+    <div class="card">
+
+        <h3>📋</h3>
+
+        <h3>
+            Lista de alunos
+        </h3>
+
+        <a href="/alunos">
+            Acessar
+        </a>
+
+    </div>
+
+
+
+
+
+    <div class="card">
+
+        <h3>📷</h3>
+
+        <h3>
+            Reconhecimento Facial
+        </h3>
+
+        <a href="/reconhecimento">
+            Acessar
+        </a>
+
+    </div>
+
+
+
+
+
+    <div class="card">
+
+        <h3>✅</h3>
+
+        <h3>
+            Fazer Chamada
+        </h3>
+
+        <a href="/chamada">
+            Acessar
+        </a>
+
+    </div>
+
+
+
+
+    <div class="card">
+
+        <h3>📊</h3>
+
+        <h3>
+            Relatórios
+        </h3>
+
+        <a href="/relatorio">
+            Acessar
+        </a>
+
+    </div>
+
+
+
+
+    <div class="card">
+
+        <h3>📚</h3>
+
+        <h3>
+            Histórico
+        </h3>
+
+        <a href="/historico">
+            Acessar
+        </a>
+
+    </div>
+
+
+
+</div>
+
+<footer class="footer">
+    <p>© 2026 Sistema Presença Escolar • By Desterro</p>
+</footer>
+
+
+{% endblock %}
+
+.welcome{
+
+    margin-bottom:30px;
+
+}
+
+
+
+.cards{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+
+}
+
+
+
+.card{
+
+    background:#ffffff;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 4px 10px #ddd;
+
+}
+
+
+
+.card h3{
+
+    margin-bottom:15px;
+
+}
+
+
+
+.card a{
+
+    display:inline-block;
+    background:#1d4ed8;
+    color:white;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:8px;
+
+}
+
+
+
+.card a:hover{
+
+    background:#2563eb;
+
+}
